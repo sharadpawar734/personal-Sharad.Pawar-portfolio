@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharad Pawar - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="feedback.css">
+    <link rel="stylesheet" href="./feedback.js">
+
+<Style>
+    .profile-img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+
+    border: 4px solid transparent;
+    background: linear-gradient(#000, #000) padding-box,
+                linear-gradient(135deg, #2563eb, #38bdf8) border-box;
+
+    animation: glow 3s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 10px rgba(56,189,248,0.5);
+    }
+    to {
+        box-shadow: 0 0 25px rgba(56,189,248,0.9);
+    }
+}
+body {
+    background: #0b0b14;
+    color: #f1f5f9;
+}
+
+.hero {
+    background: linear-gradient(135deg, #1e1b4b, #312e81);
+}
+</Style>
+<style>
+/* Feedback form fix */
+.feedback-form,
+.feedback-form * {
+    pointer-events: auto !important;
+}
+
+.feedback-form input,
+.feedback-form textarea,
+.feedback-form button {
+    position: relative;
+    z-index: 10;
+}
+
+.feedback-form button {
+    cursor: pointer;
+}
+</style>
+
+</head>
+<script src="./feedback.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("feedbackForm");
+
+    if (!form) return;
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        let name = form.querySelector("input[name='name']");
+        let email = form.querySelector("input[name='email']");
+        let message = form.querySelector("textarea[name='message']");
+
+        if (!name.value || !email.value || !message.value) {
+            alert("Please fill all fields");
+            return;
+        }
+
+        // Submit form normally after validation
+        form.submit();
+    });
+});
+</script>
+
+<body>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg id="sunIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M12 18c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6zm0-10c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4zM13 3h-2v3h2V3zm0 15h-2v3h2v-3zM6 11H3v2h3v-2zm15 0h-3v2h3v-2zM7.05 6.05L5.64 4.64 4.22 6.05l1.41 1.41 1.42-1.41zm11.32 11.32l-1.41 1.41 1.41 1.41 1.41-1.41-1.41-1.41zM17.36 6.05l1.41-1.41 1.41 1.41-1.41 1.41-1.41-1.41zM6.05 17.36l-1.41 1.41 1.41 1.41 1.41-1.41-1.41-1.41z"/>
+        </svg>
+        <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="display: none;">
+            <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9 9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/>
+        </svg>
+    </button>
+
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <div class="logo">SHARAD PAWAR</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#feedback">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <img src="./sharad.png" alt="Sharad Pawar" class="profile-img">
+            <h1>SHARAD PAWAR</h1>
+            <h2>Computer Science Engineering Student | Full-Stack Developer</h2>
+            <p class="hero-description">B.E. CSE (Passout 2027) | Passionate about Web Development, Android Apps & AI-Driven Systems</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="icon">📞</span>
+                    <a href="tel:+917249842209">+91 7249842209</a>
+                </div>
+                <div class="contact-item">
+                    <span class="icon">✉️</span>
+                    <a href="mailto:sharadpawar12003@gmail.com">sharadpawar12003@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <span class="icon">📍</span>
+                    <span>Nashik, Maharashtra</span>
+                </div>
+                 <div class="contact-item">
+                    <a href="https://github.com/sharadpawar734" target="_blank" class="quick-link linkedin">
+                    <span class="icon">😺</span> GitHub
+                </a>
+                 </div>
+                
+                <div class="contact-item">
+                    <a href="https://www.linkedin.com/in/sharad-pawar-135600273?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="quick-link linkedin">
+                    <span class="icon">💼</span> LinkedIn
+                </a>
+                 </div>
+                <div class="contact-item">
+                    <a href="./resume.pdf" download class="quick-link resume">
+                    <span class="icon">📄</span> Download Resume
+                     </a>
+                </a>
+            </div>
+        </div>
+    </section>
+    <br>
+    <br>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <p>
+               <center> I'm Sharad Pawar, a highly motivated Computer Science Engineering student with a passion for building scalable digital solutions. 
+                Currently strengthening my expertise in Java (Spring Boot), React.js, React Native, and Data Structures & Algorithms. 
+                I have hands-on experience in Web Development, Android Development, and AI-driven systems with multiple published research papers and award-winning projects. 
+                My goal is to apply my development skills and engineering knowledge to contribute to innovative projects and create impactful technology solutions.
+            </center> </p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>💻 Programming Languages</h3>
+                <ul class="skill-list">
+                    <li>Java (Core + OOP + DSA - Strong)</li>
+                    <li>JavaScript</li>
+                    <li>PHP</li>
+                    <li>Python (Basic)</li>
+                    <li>SQL</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <h3>🌐 Web Development</h3>
+                <ul class="skill-list">
+                    <li>HTML, CSS, JavaScript</li>
+                    <li>React.js (Learning)</li>
+                    <li>Spring Boot (Learning)</li>
+                    <li>PHP Web Applications</li>
+                    <li>Responsive UI Design</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <h3>📱 Mobile Development</h3>
+                <ul class="skill-list">
+                    <li>Android (Java)</li>
+                    <li>React Native (Learning)</li>
+                    <li>Kotlin (Learning)</li>
+                    <li>XML UI, Material Design</li>
+                    <li>Firebase & API Integration</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <h3>🛠️ Tools & Technologies</h3>
+                <ul class="skill-list">
+                    <li>Git & GitHub</li>
+                    <li>MySQL, Firebase</li>
+                    <li>Arduino, ESP32</li>
+                    <li>XAMPP, Tomcat, Postman</li>
+                    <li>IoT Sensor Integration</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>AI-Based Timetable Generator</h3>
+                    <p>AI-driven scheduling system compliant with NEP 2020. Eliminates conflicts across departments using intelligent algorithms. Selected at college-level round for national hackathon.</p>
+                    <span class="project-badge">Smart India Hackathon 2024</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>Netflix-Style Streaming Website</h3>
+                    <p>Dynamic multi-language streaming platform with real-time content loading, efficient data storage, and fully responsive design for seamless user experience.</p>
+                    <span class="project-badge">Innovation Hub Internship</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>MediVoice-AI</h3>
+                    <p>Clinical Decision Support System with voice-to-text medical analysis, LLM-based symptom extraction, emergency alerts, and safety monitoring features.</p>
+                    <span class="project-badge">Research Publication Upcoming</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>Smart Water Management System</h3>
+                    <p>IoT + AI solution for real-time water flow and quality monitoring with automated leakage detection using Arduino, ESP32, flow sensors, and turbidity sensors.</p>
+                    <span class="project-badge">Published Research Paper</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>Quiz Competition Platform</h3>
+                    <p>Full-stack web application with real-time scoring, user authentication, admin dashboard, and deployment. Client-paid project with complete requirement analysis.</p>
+                    <span class="project-badge">Earned ₹20,000</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>Society Management System</h3>
+                    <p>Comprehensive platform designed for societies with 5000+ flats featuring automated billing, visitor logs, notice system, and AI-powered analytics module.</p>
+                    <span class="project-badge">Competition Winner 2024</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <h2>Experience & Leadership</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3>Innovation Hub</h3>
+                <p class="position">Android Developer Intern (Current)</p>
+                <ul>
+                    <li>Developing multi-language Android applications with dynamic UI and Material Design</li>
+                    <li>Built Netflix-style streaming website with real-time content loading during internship</li>
+                    <li>Gained hands-on experience in deployment, teamwork, and real-world project delivery</li>
+                </ul>
+            </div>
+            <div class="timeline-item">
+                <h3>CodeSoft</h3>
+                <p class="position">Java Development Intern (Ongoing till Final Year)</p>
+                <ul>
+                    <li>Strengthening core Java concepts, OOP principles, and DSA problem-solving skills</li>
+                    <li>Building enterprise-level Java applications and REST APIs</li>
+                    <li>Understanding complete software development lifecycle and project management</li>
+                </ul>
+            </div>
+            <div class="timeline-item">
+                <h3>IIT Bombay Techfest</h3>
+                <p class="position">Pune Zone Coordinator</p>
+                <ul>
+                    <li>Officially coordinated IIT Bombay Techfest events for Dr. D.Y. Patil students</li>
+                    <li>Maintained direct communication with IIT teams, resource persons, and industry experts</li>
+                    <li>Received official certificates for outstanding coordination and event management</li>
+                </ul>
+            </div>
+            <div class="timeline-item">
+                <h3>Developer Student Club (DSC)</h3>
+                <p class="position">Event Organizer</p>
+                <ul>
+                    <li>Managed end-to-end event operations including planning, marketing, logistics, and execution</li>
+                    <li>Coordinated with HODs, faculty members, IIT teams, and industry professionals</li>
+                    <li>Developed strong leadership, communication, and team management skills</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements">
+        <h2>Achievements & Recognition</h2>
+        <div class="achievements-grid">
+            <div class="achievement-card">
+                <div class="number">AIR 55</div>
+                <p>IIT Bombay Web Development Competition 2024</p>
+            </div>
+            <div class="achievement-card">
+                <div class="number">₹20,000</div>
+                <p>Client Project Revenue (Quiz Competition Platform)</p>
+            </div>
+            <div class="achievement-card">
+                <div class="number">Published</div>
+                <p>Research Paper on IoT-Based Smart Water Management</p>
+            </div>
+            <div class="achievement-card">
+                <div class="number">SIH 2024</div>
+                <p>Smart India Hackathon College Level Selection</p>
+            </div>
+            <div class="achievement-card">
+                <div class="number">Winner</div>
+                <p>Project Competition Nashik Chadawad 2024</p>
+            </div>
+            <div class="achievement-card">
+                <div class="number">5000+</div>
+                <p>Users on Society Management System Project</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feedback & Contact Section -->
+    <section id="feedback" class="feedback-section">
+        <h2>Feedback & Contact</h2>
+        <form id="feedbackForm" class="feedback-form" action="submit_feedback.php" method="post">
+            <div class="form-group">
+                <label for="name">Name *</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+            <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <div class="form-group">
+                <div class="checkbox-group">
+                    <input type="checkbox" id="website_preference" name="website_preference" value="yes">
+                    <label for="website_preference">I would like a website designed</label>
+                </div>
+            </div>
+            <button type="submit" class="submit-btn" id="submitBtn">Send Message</button>
+        </form>
+        <div id="formMessage" style="margin-top: 1rem; text-align: center;"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <h2 style="color: white; margin-bottom: 1.5rem;">Let's Connect!</h2>
+        <p style="margin-bottom: 1.5rem; font-size: 1.1rem;">I'm always open to discussing new projects, opportunities, and collaborations.</p>
+        
+        <div class="footer-contact">
+            <div class="footer-contact-item">
+                <span class="icon">📞</span>
+                <a href="tel:+917249842209">+91 7249842209</a>
+            </div>
+            <div class="footer-contact-item">
+                <span class="icon">✉️</span>
+                <a href="mailto:sharadpawar12003@gmail.com">sharadpawar12003@gmail.com</a>
+            </div>
+            <div class="footer-contact-item">
+                <span class="icon">📍</span>
+                <span>Nashik, Maharashtra</span>
+            </div>
+        </div>
+        
+        <a href="mailto:sharadpawar12003@gmail.com" class="cta-button">Get In Touch</a>
+        <p style="margin-top: 3rem; opacity: 0.7; font-size: 0.95rem;">&copy; 2026 Sharad Pawar. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
